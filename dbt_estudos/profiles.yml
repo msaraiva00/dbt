@@ -1,0 +1,10 @@
+dbt_estudos:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: cursos-419000
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt_dw') }}"
+      threads: 4
+      keyfile: /home/msaraiva00/.dbt/cursos-419000-a4d2b876c8dd.json
